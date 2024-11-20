@@ -2,20 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  box-sizing: border-box;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --t1 : rgba(82, 82, 82, 0.783);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --t1 : rgba(188, 188, 188, 0.822);
   }
 }
 
-body {
-  color: var(--foreground);
+body{
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }

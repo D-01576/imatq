@@ -6,7 +6,8 @@ export default async function Home() {
   const isLogin = await useisLogin();
 
   return (
-    <div>
+    <div className="bg-white">
+
       {isLogin ? (
         <Initial />
       ) : (
