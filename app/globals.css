@@ -14,7 +14,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: linear-gradient(-150deg, #222222 15%, #373737 70%, #3c4859 94%);
     --foreground: #ededed;
     --t1 : rgba(188, 188, 188, 0.822);
   }
@@ -22,4 +22,8 @@
 
 body{
   background: var(--background);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
 }
