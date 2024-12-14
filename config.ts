@@ -1,5 +1,5 @@
 const config = {
-    baseUrl: 'http://localhost:6000',
+    baseUrl: 'http://localhost:3440',
 };
   
 export default config;

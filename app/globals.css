@@ -26,4 +26,28 @@ body{
   background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--foreground);
+}
+
+.Signup-Page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Signin_Btn{
+  color: var(--foreground);
+  display: flex;
+  border: 1px solid white;
+  justify-content: space-around;
+  width: 120%;
+  align-items: center;
+  padding: 5px;
+  transform: scale(1.2);
+  border-radius: 5px;
 }
