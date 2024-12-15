@@ -4,7 +4,6 @@ import config from '@/config';
 import axios from 'axios';
 import { useSearchParams } from 'next/navigation';
 import { useEffect } from 'react';
-//@ts-ignore
 import Cookie from "js-cookie"
 
 export default function AuthGooglePage() {

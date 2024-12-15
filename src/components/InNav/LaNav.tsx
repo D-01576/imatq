@@ -1,8 +1,9 @@
 import Image from "next/image";
 import T1 from "../Texts/t1";
 import logo from "@/public/logo/logo.png";
-import Link from "next/link";
+// import Link from "next/link";
 import "./globals.css";
+import { BellIcon, StarIcon } from "@/src/icons/icons";
 
 const nav = {
     width : '100vw',
@@ -22,8 +23,7 @@ const left = {
 
 const right = {
     display: 'flex',
-    gap: '50px',
-    justifyContent: 'space-between',
+    gap: '20px',
     alignItems: 'center',
 };
 
@@ -36,7 +36,7 @@ const middle = {
     
 }
 
-export default function LaNav() {
+export default function InNav() {
     return (
         <div style={nav}>
             <div style={left}>
@@ -49,9 +49,8 @@ export default function LaNav() {
                 <T1 text="Ranking" />
             </div>
             <div style={right}>
-                <Link href={"/login"}>
-                    <button className="button-29" role="button">Login</button>
-                </Link>
+                <BellIcon></BellIcon>
+                <StarIcon></StarIcon>
             </div>
         </div>
     );

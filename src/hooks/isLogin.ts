@@ -4,12 +4,11 @@ import { cookies } from "next/headers";
 
 export default async function useisLogin(): Promise<boolean> {
     try {
-        const token = await cookies().get("access-token")
-        // console.log(token.value)
+        const token = await cookies();
+        const to = await token.get("access-token")
         const response = await axios.get(`${config.baseUrl}/auth/islogin`, {
-            token : token,
             headers: {
-                Authorization: token.value
+                Authorization: to?.value
             }
         });
         const data = response.data;

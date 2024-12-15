@@ -2,7 +2,7 @@
 
 import config from "@/config"
 import axios from "axios"
-import GoogleIcon from "@/src/icons/icons"
+import {GoogleIcon} from "@/src/icons/icons"
 
 export default function SignUp(){
     const handleclick = async ()=>{
