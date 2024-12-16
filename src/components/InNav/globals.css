@@ -1,0 +1,11 @@
+.In-middle{
+    background-image: radial-gradient(100% 100% at 100% 0, #4b4b4b5f 0, #35363850 100%);
+    display: flex;
+    padding: 10px;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 20px;
+    border-radius: 5px;
+    transform: scale(0.8);
+}

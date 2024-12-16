@@ -2,20 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  box-sizing: border-box;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --t1 : rgba(82, 82, 82, 0.783);
 }
+
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: linear-gradient(-150deg, #000000 15%, #000000ec 70%, #0e0e0e 94%);
     --foreground: #ededed;
+    --t1 : rgba(188, 188, 188, 0.822);
   }
 }
 
-body {
-  color: var(--foreground);
+body{
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: center; */
+  color: var(--foreground);
+}
+
+.Signup-Page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Signin_Btn{
+  color: var(--foreground);
+  display: flex;
+  border: 1px solid white;
+  justify-content: space-around;
+  width: 120%;
+  align-items: center;
+  padding: 5px;
+  transform: scale(1.2);
+  border-radius: 5px;
 }

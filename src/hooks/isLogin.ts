@@ -1,21 +1,25 @@
 import config from "@/config";
+import axios from "axios";
+import { cookies } from "next/headers";
 
 export default async function useisLogin(): Promise<boolean> {
     try {
-        const response = await fetch(`${config.baseUrl}/api/islogin`);
-
-        if (!response.ok) {
-            console.error("Error fetching login status: ", response.statusText);
-            return false;
+        const token = await cookies();
+        const to = await token.get("access-token")
+        const response = await axios.get(`${config.baseUrl}/auth/islogin`, {
+            headers: {
+                Authorization: to?.value
+            }
+        });
+        const data = response.data;
+        if(!data){
+            return false
         }
-        const data = await response.json();
-
-        if (typeof data.access === 'boolean') {
-            return data.access;
-        } else {
-            console.error('Invalid response format:', data);
-            return false;
+        console.log(data)
+        if (data.status === "PASS") {
+            return true;
         }
+        return false
 
     } catch (error) {
         console.error('Error fetching login status:', error);
