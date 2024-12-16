@@ -1,4 +1,4 @@
-.middle{
+.La-middle{
     background-image: radial-gradient(100% 100% at 100% 0, #4b4b4b5f 0, #35363850 100%);
     display: flex;
     padding: 10px;
@@ -18,7 +18,7 @@
 
 }
 
-.button-29 {
+.La-signup {
     transform: scale(0.8);
     align-items: center;
     appearance: none;

@@ -32,25 +32,21 @@ const logoStyle = {
     height : '70px',
 }
 
-const middle = {
-    
-}
-
 export default function LaNav() {
     return (
         <div style={nav}>
-            <div style={left}>
+            <Link href={"/"} style={left}>
                 {/* You can add content or components here for the left section */}
                 <Image src={logo} alt="logo" style={logoStyle}></Image>
-            </div>
-            <div style={middle} className="middle">
+            </Link>
+            <div className="La-middle">
                 <T1 text="Explore" />
                 <T1 text="Problems" />
                 <T1 text="Ranking" />
             </div>
             <div style={right}>
                 <Link href={"/login"}>
-                    <button className="button-29" role="button">Login</button>
+                    <button className="La-signup" role="button">Login</button>
                 </Link>
             </div>
         </div>

@@ -12,6 +12,7 @@
   --t1 : rgba(82, 82, 82, 0.783);
 }
 
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: linear-gradient(-150deg, #000000 15%, #000000ec 70%, #0e0e0e 94%);
@@ -27,6 +28,7 @@ body{
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   /* align-items: center; */
   /* justify-content: center; */
   color: var(--foreground);

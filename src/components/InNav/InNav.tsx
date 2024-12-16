@@ -4,6 +4,7 @@ import logo from "@/public/logo/logo.png";
 // import Link from "next/link";
 import "./globals.css";
 import { BellIcon, StarIcon } from "@/src/icons/icons";
+import Link from "next/link";
 
 const nav = {
     width : '100vw',
@@ -39,14 +40,16 @@ const middle = {
 export default function InNav() {
     return (
         <div style={nav}>
-            <div style={left}>
+            <Link href={"/"} style={left}>
                 {/* You can add content or components here for the left section */}
                 <Image src={logo} alt="logo" style={logoStyle}></Image>
-            </div>
-            <div style={middle} className="middle">
+            </Link>
+            <div style={middle} className="In-middle">
                 <T1 text="Explore" />
-                <T1 text="Problems" />
+                <Link href={"problems"} ><T1 text="Problems"/></Link>
+                <T1 text="Contests" />
                 <T1 text="Ranking" />
+                <T1 text="Discuss"/>
             </div>
             <div style={right}>
                 <BellIcon></BellIcon>
