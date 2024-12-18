@@ -8,8 +8,11 @@ export default async function Home() {
 
   return (
     <div className="bg-white">
-      {isLogin ? (
-        <Initial />
+      {isLogin.isLoggedIn ? (
+        <div>
+
+          <Initial />
+        </div>
       ) : (
         <Landing />
       )}

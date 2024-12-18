@@ -62,14 +62,13 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const isLogin = await useisLogin();
-console.log(isLogin)
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {isLogin ? (
-              <InNav />
+        {isLogin.isLoggedIn ? (
+              <InNav img={isLogin.user.profile} name= {isLogin.user.name}/>
             ) : (
               <LaNav />
       )}
