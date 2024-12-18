@@ -1,10 +1,11 @@
+"use client"
 import Image from "next/image";
 import T1 from "../Texts/t1";
 import logo from "@/public/logo/logo.png";
-// import Link from "next/link";
 import "./globals.css";
 import { BellIcon, StarIcon } from "@/src/icons/icons";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const nav = {
     width : '100vw',
@@ -26,6 +27,7 @@ const right = {
     display: 'flex',
     gap: '20px',
     alignItems: 'center',
+    flexDirection : 'column'
 };
 
 const logoStyle = {
@@ -37,7 +39,21 @@ const middle = {
     
 }
 
-export default function InNav() {
+export default function InNav({img, name} : {img : string, name : string}) {
+    const [open,setOpen] = useState(false)
+    useEffect(() => {
+        const handleClick = (e) => {
+            if(!e.target.closest(".profile_img") && !e.target.closest(".popup")){
+                console.log(e.target.closest(".popup"))
+                const popup = document.querySelector(".popup") as HTMLElement;
+                popup.style.display = 'none';
+            }
+        };
+        document.addEventListener("click", handleClick);
+        return () => {
+          document.removeEventListener("click", handleClick);
+        };
+    }, []);
     return (
         <div style={nav}>
             <Link href={"/"} style={left}>
@@ -52,8 +68,25 @@ export default function InNav() {
                 <T1 text="Discuss"/>
             </div>
             <div style={right}>
-                <BellIcon></BellIcon>
-                <StarIcon></StarIcon>
+                <div className="another">
+                    <BellIcon></BellIcon>
+                    <StarIcon></StarIcon>
+                    <Image src={img} alt="jadf" width={30} height={30} className="profile_img" onClick={()=>{
+                        const popup = document.querySelector(".popup") as HTMLElement;
+                        if(open){
+                            popup.style.display = 'none';
+                        }else{
+                            popup.style.display = 'flex';
+                        }
+                        setOpen(!open)
+                    }}></Image>
+                </div>
+                <div className="popup">
+                    <div className="top_Pop">
+                        <Image src={img} alt="jkdf" width={60} height={60} className="profile_img pop_img"></Image>
+                        <h2 className="name_pop">{name}</h2>
+                    </div>
+                </div>
             </div>
         </div>
     );

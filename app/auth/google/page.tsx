@@ -12,10 +12,8 @@ export default function AuthGooglePage() {
   async function log(){
     const code = searchParams?.get('code') ?? '';
     const res = await axios.get(`${config.baseUrl}/google/callback?code=${code}`);
-    console.log(res)
     if(res.data.status === "PASS"){
-        const ress = await Cookie.set("access-token", res.data.token)
-        console.log(ress)
+        await Cookie.set("access-token", res.data.token)
         window.location.href = "/"
     }else {
         alert("something went wrong");
